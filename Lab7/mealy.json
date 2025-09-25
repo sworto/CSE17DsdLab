@@ -1,0 +1,494 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "mealy": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "mealy.v:1.1-51.10"
+      },
+      "parameter_default_values": {
+        "s0": "00",
+        "s1": "01",
+        "s2": "10",
+        "s3": "11"
+      },
+      "ports": {
+        "dout": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "din": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "rst": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "$auto$opt_reduce.cc:128:opt_pmux$47": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6, 7, 8 ],
+            "Y": [ 9 ]
+          }
+        },
+        "$auto$opt_reduce.cc:128:opt_pmux$49": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10, 7 ],
+            "Y": [ 11 ]
+          }
+        },
+        "$procdff$45": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "mealy.v:6.5-50.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 5 ],
+            "D": [ 12 ],
+            "Q": [ 2 ]
+          }
+        },
+        "$procdff$46": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "mealy.v:6.5-50.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 5 ],
+            "D": [ 13, 14 ],
+            "Q": [ 15, 16 ]
+          }
+        },
+        "$procmux$11": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000010",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "mealy.v:0.0-0.0|mealy.v:15.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x" ],
+            "B": [ 17, "0" ],
+            "S": [ 10, 9 ],
+            "Y": [ 18 ]
+          }
+        },
+        "$procmux$12_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "mealy.v:0.0-0.0|mealy.v:15.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16 ],
+            "B": [ "1", "1" ],
+            "Y": [ 10 ]
+          }
+        },
+        "$procmux$15_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "mealy.v:0.0-0.0|mealy.v:15.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16 ],
+            "B": [ "0", "1" ],
+            "Y": [ 6 ]
+          }
+        },
+        "$procmux$18_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "mealy.v:0.0-0.0|mealy.v:15.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16 ],
+            "B": [ "1" ],
+            "Y": [ 7 ]
+          }
+        },
+        "$procmux$21_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "mealy.v:0.0-0.0|mealy.v:15.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16 ],
+            "Y": [ 8 ]
+          }
+        },
+        "$procmux$23": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "mealy.v:8.12-8.18|mealy.v:8.9-49.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 18 ],
+            "B": [ "0" ],
+            "S": [ 4 ],
+            "Y": [ 12 ]
+          }
+        },
+        "$procmux$26": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "mealy.v:38.24-38.30|mealy.v:38.21-41.50"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "1" ],
+            "B": [ "1", "0" ],
+            "S": [ 3 ],
+            "Y": [ 19, 20 ]
+          }
+        },
+        "$procmux$28": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "mealy.v:0.0-0.0|mealy.v:15.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x" ],
+            "B": [ 19, 20, 21, 22, 17, "0" ],
+            "S": [ 11, 6, 8 ],
+            "Y": [ 23, 24 ]
+          }
+        },
+        "$procmux$31": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "mealy.v:31.24-31.30|mealy.v:31.21-34.50"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0" ],
+            "B": [ "1", "1" ],
+            "S": [ 3 ],
+            "Y": [ 21, 22 ]
+          }
+        },
+        "$procmux$39": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "mealy.v:17.24-17.30|mealy.v:17.21-20.50"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 3 ],
+            "Y": [ 17 ]
+          }
+        },
+        "$procmux$43": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "mealy.v:8.12-8.18|mealy.v:8.9-49.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 23, 24 ],
+            "B": [ "0", "0" ],
+            "S": [ 4 ],
+            "Y": [ 13, 14 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\dout[0:0]": {
+          "hide_name": 1,
+          "bits": [ 12 ],
+          "attributes": {
+            "src": "mealy.v:6.5-50.8"
+          }
+        },
+        "$0\\state[1:0]": {
+          "hide_name": 1,
+          "bits": [ 13, 14 ],
+          "attributes": {
+            "src": "mealy.v:6.5-50.8"
+          }
+        },
+        "$auto$opt_reduce.cc:134:opt_pmux$48": {
+          "hide_name": 1,
+          "bits": [ 9 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_reduce.cc:134:opt_pmux$50": {
+          "hide_name": 1,
+          "bits": [ 11 ],
+          "attributes": {
+          }
+        },
+        "$auto$wreduce.cc:461:run$51": {
+          "hide_name": 1,
+          "bits": [ 17, "0" ],
+          "attributes": {
+          }
+        },
+        "$procmux$11_Y": {
+          "hide_name": 1,
+          "bits": [ 18 ],
+          "attributes": {
+          }
+        },
+        "$procmux$12_CMP": {
+          "hide_name": 1,
+          "bits": [ 10 ],
+          "attributes": {
+          }
+        },
+        "$procmux$15_CMP": {
+          "hide_name": 1,
+          "bits": [ 6 ],
+          "attributes": {
+          }
+        },
+        "$procmux$18_CMP": {
+          "hide_name": 1,
+          "bits": [ 7 ],
+          "attributes": {
+          }
+        },
+        "$procmux$21_CMP": {
+          "hide_name": 1,
+          "bits": [ 8 ],
+          "attributes": {
+          }
+        },
+        "$procmux$26_Y": {
+          "hide_name": 1,
+          "bits": [ 19, 20 ],
+          "attributes": {
+          }
+        },
+        "$procmux$28_Y": {
+          "hide_name": 1,
+          "bits": [ 23, 24 ],
+          "attributes": {
+          }
+        },
+        "$procmux$31_Y": {
+          "hide_name": 1,
+          "bits": [ 21, 22 ],
+          "attributes": {
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "mealy.v:1.47-1.50"
+          }
+        },
+        "din": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "mealy.v:1.37-1.40"
+          }
+        },
+        "dout": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "init": "0",
+            "src": "mealy.v:1.25-1.29"
+          }
+        },
+        "rst": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "mealy.v:1.42-1.45"
+          }
+        },
+        "state": {
+          "hide_name": 0,
+          "bits": [ 15, 16 ],
+          "attributes": {
+            "src": "mealy.v:2.15-2.20"
+          }
+        }
+      }
+    }
+  }
+}
